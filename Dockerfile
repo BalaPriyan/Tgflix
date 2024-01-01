@@ -22,8 +22,8 @@ RUN pip3 install -r requirements.txt
 # Set environment variables
 ENV DATABASE_URL="postgres://zfzqdbzb:ZDT6m8lXKDuWKNhIRkvxRmE3ifBeT_4Z@flora.db.elephantsql.com/zfzqdbzb"
 
-# Setup Database
-RUN psql $DATABASE_URL < scripts/migrate.sh
+# Run database migration script
+RUN /bin/bash -c "source venv/bin/activate && psql $DATABASE_URL < scripts/migrate.sh"
 
 # Expose the port your app runs on
 EXPOSE 8000
