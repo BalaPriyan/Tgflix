@@ -8,7 +8,7 @@ class Config:
     SESSION_STRING :str
     ADMIN_UID:int
     
-    DATABASE_URL:str
+    DATABASE_URL:'postgres://fchnnvpo:UV3Rr3nIaZ-ICitGO7qfTHXsYobrJjiI@rogue.db.elephantsql.com/fchnnvpo'
 
 
     APP_NAME        = 'Movie Blog'
