@@ -2,6 +2,9 @@ from sqlalchemy import MetaData
 from databases import Database
 from .config import CONFIG
 
+from sqlalchemy import MetaData
+from databases import Database, DatabaseError  # Import the DatabaseError
+
 try:
     db = Database(CONFIG.DATABASE_URL)
 except DatabaseError as e:
@@ -9,4 +12,3 @@ except DatabaseError as e:
 except Exception as e:
     raise ValueError(f'Unexpected error: {e}')  # Catching any unexpected exceptions
 metadata = MetaData()
-
